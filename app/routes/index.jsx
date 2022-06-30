@@ -1,6 +1,5 @@
-import {} from "@remix-run/react";
 import { Link, useLoaderData } from "remix";
-import { db } from "~/utils/db.server";
+
 
 export const loader = async () => {
   const data = await fetch(`https://gxwebhackathon.herokuapp.com/menu`).then((res) => res.json());
@@ -41,9 +40,9 @@ function Menu({ menu }) {
               {item.description}
             </p>
             <br />
-            <a href="#" className="btn btn-primary">
+            <Link to="/order" className="btn btn-primary">
               Order Now
-            </a>
+            </Link>
           </div>
         </div>
       ))}

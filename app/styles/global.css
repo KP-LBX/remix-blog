@@ -255,3 +255,25 @@ p {
   font-size: 1rem;
   color: #747d8c;
 }
+
+/* Order Success */
+/* Show a card with order success */
+.order-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background: white;
+  padding: 5rem;
+}
+
+.receipt-img{
+  width: 50%;
+  float: right;
+  border-radius: 2%;
+}
+
+.blue{ 
+  color: blue;
+}
