@@ -1,43 +1,30 @@
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const { PrismaClient } = require("@prisma/client");
+
+const db = new PrismaClient();
 
 async function seed() {
-  const john = await prisma.user.create({
-    data: {
-      username: 'john',
-      // Hash for password - twixrox
-      passwordHash:
-        '$2b$10$K7L1OJ45/4Y2nIvhRVpCe.FSmhDdWoXehVzJptJ/op0lSsvqNu/1u',
-    },
-  })
-
   await Promise.all(
     getPosts().map((post) => {
-      const data = { userId: john.id, ...post }
-      return prisma.post.create({ data })
+      return db.post.create({ data: post });
     })
-  )
+  );
 }
-
-seed()
 
 function getPosts() {
   return [
     {
-      title: 'JavaScript Performance Tips',
-      body: `We will look at 10 simple tips and tricks to increase the speed of your code when writing JS`,
+      title: "My Self-Improvement Journey",
+      body: "It has been a long, arduous, rewarding journey of self-discovery.",
     },
     {
-      title: 'Tailwind vs. Bootstrap',
-      body: `Both Tailwind and Bootstrap are very popular CSS frameworks. In this article, we will compare them`,
+      title: "My Dogs - An Ode to Rocky and Tyga",
+      body: "They're the best. In the words of Tina Turner - Simply The Best.",
     },
     {
-      title: 'Writing Great Unit Tests',
-      body: `We will look at 10 simple tips and tricks on writing unit tests in JavaScript`,
+      title: "My Thoughts on Remote Work",
+      body: "I've been finding a lot of success working at coffe shops with friends. Working at home has been trying - at times, I get distracted.",
     },
-    {
-      title: 'What Is New In PHP 8?',
-      body: `In this article we will look at some of the new features offered in version 8 of PHP`,
-    },
-  ]
+  ];
 }
+
+seed();

@@ -1,11 +1,9 @@
-import { Outlet } from 'remix'
+import { Outlet } from "@remix-run/react";
 
-function Posts() {
+export default function Posts() {
   return (
     <>
       <Outlet />
     </>
-  )
+  );
 }
-
-export default Posts

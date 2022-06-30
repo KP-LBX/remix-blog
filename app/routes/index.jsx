@@ -1,13 +1,10 @@
-function Home() {
+export default function Home() {
   return (
-    <div>
-      <h1>Welcome to Remix!</h1>
+    <>
+      <h1>Welcome to my blog!</h1>
       <p>
-        Remix is a full stack web framework by the creators of React Router.
-        This is a simple blog app from the Traversy Media Remix crash course.
+        I created this with the help of Brad Traversy, to whom I owe my life.
       </p>
-    </div>
-  )
+    </>
+  );
 }
-
-export default Home
