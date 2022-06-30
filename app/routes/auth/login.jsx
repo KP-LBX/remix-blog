@@ -49,22 +49,9 @@ export const action = async ({ request }) => {
       }
 
       // Create Session
-      return createUserSession(user.id, '/posts')
+      return createUserSession(user.username, '/')
     }
     case 'register': {
-      // Check if user exists
-      const userExists = await db.user.findFirst({
-        where: {
-          username,
-        },
-      })
-      if (userExists) {
-        return badRequest({
-          fields,
-          fieldErrors: { username: `User ${username} already exists` },
-        })
-      }
-
       // Create user
       const user = await register({ username, password })
       if (!user) {
@@ -85,7 +72,7 @@ export const action = async ({ request }) => {
     }
   }
 
-  return redirect('/posts')
+  return redirect('/')
 }
 
 function Login() {

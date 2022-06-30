@@ -15,7 +15,7 @@ export const meta = () => {
 }
 
 export const loader = async ({ request }) => {
-  const user = null //await getUser(request)
+  const user = await getUser(request)
   const data = {
     user,
   }
@@ -62,9 +62,6 @@ function Layout({ children }) {
         </Link>
 
         <ul className='nav'>
-          <li>
-            <Link to='/posts'>Posts</Link>
-          </li>
           {user ? (
             <li>
               <form action='/auth/logout' method='POST'>

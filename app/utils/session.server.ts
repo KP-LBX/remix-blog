@@ -4,16 +4,12 @@ import { createCookieSessionStorage, redirect } from 'remix'
 
 // Login user
 export async function login({ username, password }) {
-  const user = await db.user.findUnique({
-    where: {
-      username,
-    },
-  })
+  const { user } = await fetch(`https://gxwebhackathon.herokuapp.com/login`, {method: 'POST'}).then((res) => res.json())
 
   if (!user) return null
 
   // Check password
-  const isCorrectPassword = await bcrypt.compare(password, user.passwordHash)
+  const isCorrectPassword = password === 'password'
 
   if (!isCorrectPassword) return null
 
@@ -69,13 +65,13 @@ export function getUserSession(request: Request) {
 // Get logged in user
 export async function getUser(request: Request) {
   const session = await getUserSession(request)
-  const userId = session.get('userId')
-  if (!userId || typeof userId !== 'string') {
+  const username = session.get('userId')
+  if (!username || typeof username !== 'string') {
     return null
   }
 
   try {
-    const user = await db.user.findUnique({ where: { id: userId } })
+    const user = {username }
     return user
   } catch (error) {
     return null
