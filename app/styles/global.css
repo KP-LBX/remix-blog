@@ -7,7 +7,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comic Sans MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #ececec;
 }
 
 a {
@@ -25,9 +26,14 @@ p {
 
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   margin: auto;
   padding: 0 30px;
+}
+.about{
+  font-size: 1.3rem;
+  font-family:  'Comic Sans MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 2rem;
 }
 
 .logo {
@@ -69,8 +75,8 @@ p {
 
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: #feed01;
+  color: black;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -200,4 +206,74 @@ p {
 
 .auth-container fieldset label {
   margin-right: 10px;
+}
+
+
+/* CSS for Food Menu */
+.food-menu{
+  background-color: #ececec;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.food-menu::after{
+  content: "";
+  flex: auto;
+}
+.food-menu-box{
+  width: 48%;
+  margin: 1%;
+  padding: 2%;
+  float: left;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 2px 2px silver;
+}
+
+.food-menu-img{
+  width: 30%;
+  float: left;
+  
+}
+
+.food-menu-img img{
+  width: 100%;
+  border-radius: 3%;
+}
+
+.food-menu-desc{
+  width: 60%;
+  float: left;
+  margin-left: 8%;
+}
+
+.food-price{
+  font-size: 1.2rem;
+  margin: 2% 0;
+}
+.food-detail{
+  font-size: 1rem;
+  color: #747d8c;
+}
+
+/* Order Success */
+/* Show a card with order success */
+.order-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background: white;
+  padding: 5rem;
+}
+
+.receipt-img{
+  width: 50%;
+  float: right;
+  border-radius: 2%;
+}
+
+.blue{ 
+  color: blue;
 }

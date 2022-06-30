@@ -15,7 +15,7 @@ export const meta = () => {
 }
 
 export const loader = async ({ request }) => {
-  const user = await getUser(request)
+  const user = null //await getUser(request)
   const data = {
     user,
   }
@@ -46,6 +46,7 @@ function Document({ children, title }) {
         {children}
         {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
       </body>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </html>
   )
 }
@@ -57,7 +58,7 @@ function Layout({ children }) {
     <>
       <nav className='navbar'>
         <Link to='/' className='logo'>
-          Remix
+          Israeleat
         </Link>
 
         <ul className='nav'>
