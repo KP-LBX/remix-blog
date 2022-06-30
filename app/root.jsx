@@ -57,7 +57,7 @@ function Layout({ children }) {
     <>
       <nav className='navbar'>
         <Link to='/' className='logo'>
-          Remix
+          Israeleat
         </Link>
 
         <ul className='nav'>
