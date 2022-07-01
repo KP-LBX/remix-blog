@@ -9,8 +9,22 @@
 body {
   font-family: 'Comic Sans MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #ececec;
+  
 }
 
+body::after{
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(https://developns.ca/wp-content/uploads/2021/04/assorted-indian-recipes-food-various_79295-7226.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 80%;
+  position: absolute;
+  z-index: -1;  
+  opacity: 0.3;
+}
 a {
   text-decoration: none;
   color: #000;
@@ -26,19 +40,23 @@ p {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   padding: 0 30px;
 }
 .about{
-  font-size: 1.3rem;
+  color: black;
+  font-size: 1.5rem;
   font-family:  'Comic Sans MS', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 2rem;
+  font-weight: bolder;
+  color: black;
 }
 
 .logo {
-  font-size: x-large;
+  font-size: 2rem;
   text-transform: uppercase;
+  color: black;
 }
 
 .navbar {
@@ -46,7 +64,8 @@ p {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  background-color: #f4f4f4;
+  font-weight: bolder;
+  /* background-color: #f4f4f4; */
   padding: 10px 30px;
   text-transform: uppercase;
 }
@@ -211,7 +230,6 @@ p {
 
 /* CSS for Food Menu */
 .food-menu{
-  background-color: #ececec;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -231,20 +249,19 @@ p {
 }
 
 .food-menu-img{
-  width: 30%;
-  float: left;
-  
+  width: 100%;
+  height: 350px;
 }
 
 .food-menu-img img{
   width: 100%;
+  height: 100%;
   border-radius: 3%;
 }
 
 .food-menu-desc{
   width: 60%;
   float: left;
-  margin-left: 8%;
 }
 
 .food-price{

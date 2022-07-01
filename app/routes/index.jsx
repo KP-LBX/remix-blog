@@ -11,11 +11,13 @@ function Home() {
 
   return (
     <div>
+      <header>
       <h1>Welcome to IsraelEat!</h1>
       <p className="about">
         IsraelEat is where you can have it all: the best ethically sourced ingredients, an
         allergy-friendly kitchen (yes, we have dedicated fryers), big flavor and big fun.
       </p>
+      </header>
       <Menu menu={menu} />
     </div>
   );
@@ -24,7 +26,7 @@ function Home() {
 function Menu({ menu }) {
   return (
     <section className="food-menu">
-      {menu.map((item) => (
+      {[...menu, ...menu, ...menu].map((item) => (
         <div className="food-menu-box">
           <div className="food-menu-img">
             <img
